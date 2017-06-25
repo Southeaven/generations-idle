@@ -1,4 +1,4 @@
-# generations-idle
+# Generations Idle
 
 > Generations Idle - an incremental sim game.
 
