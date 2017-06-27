@@ -17,6 +17,9 @@ export default {
   components: {
     Navbar,
     MainMenu
+  },
+  mounted: function () {
+    this.$store.dispatch('toggleEngine')
   }
 }
 </script>

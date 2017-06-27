@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Overview from '@/components/Overview/OverviewMain'
+import OverviewView from '@/components/Overview/OverviewView'
+import OverviewPlayer from '@/components/Overview/PlayerView'
 import Training from '@/components/Training/TrainingMain'
 import Job from '@/components/Job/JobMain'
 import Options from '@/components/Options/OptionsMain'
@@ -11,9 +13,24 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'Overview',
-      component: Overview
+      path: '',
+      redirect: '/overview'
+    },
+    {
+      path: '/overview',
+      component: Overview,
+      children: [
+        {
+          path: '/',
+          name: 'Overview',
+          component: OverviewView
+        },
+        {
+          path: 'player',
+          name: 'Player',
+          component: OverviewPlayer
+        }
+      ]
     },
     {
       path: '/training',
