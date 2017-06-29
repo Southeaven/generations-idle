@@ -7,6 +7,15 @@ const state = {
 }
 
 const mutations = {
+  setDay (state, payload) {
+    state.day = payload
+  },
+  setMonth (state, payload) {
+    state.month = payload
+  },
+  setYear (state, payload) {
+    state.year = payload
+  },
   addDays (state) {
     ++state.day
   },
@@ -25,7 +34,12 @@ const mutations = {
 }
 
 const actions = {
-  runOneTick ({ state, commit }) {
+  setTime ({ commit }, payload) {
+    commit('setDay', payload.day)
+    commit('setMonth', payload.month)
+    commit('setYear', payload.year)
+  },
+  runOneTick ({ state, commit, dispatch }) {
     let daysTemplate = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
     if (state.year % 4 !== 0) {
       daysTemplate[1] = 28
@@ -48,6 +62,7 @@ const actions = {
         commit('addYears', 1)
         commit('resetMonth')
       }
+      dispatch('saveGame')
     }
   },
   toggleEngine ({ state, dispatch }) {

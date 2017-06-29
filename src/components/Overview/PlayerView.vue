@@ -5,8 +5,44 @@
     <div class="ui list">
       <div class="item">First name: {{ this.firstName }}</div>
       <div class="item">Last name: {{ this.lastName }}</div>
-      <div class="item">Gender: {{ this.gender }}</div>
       <div class="item">Age: {{ this.age }}</div>
+      <div class="item">Gender: {{ this.gender }}</div>
+    </div>
+    <div class="ui grid">
+      <div class="eight wide column">
+        <h3 class="ui center aligned header">Physical attributes</h3>
+        <table class="ui very basic selectable table">
+          <thead>
+            <tr>
+              <th>Attribute</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(value, key) in this.physicalAttributes">
+              <td>{{ key }}</td>
+              <td>{{ value }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="eight wide column">
+        <h3 class="ui center aligned header">Mental attributes</h3>
+        <table class="ui very basic selectable table">
+          <thead>
+            <tr>
+              <th>Attribute</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(value, key) in this.mentalAttributes">
+              <td>{{ key }}</td>
+              <td>{{ value }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </template>
@@ -25,6 +61,22 @@ export default {
     },
     gender: function () {
       return this.$store.state.player.gender
+    },
+    physicalAttributes: function () {
+      let attributes = {
+        Power: this.$store.state.player.statistics.power,
+        Speed: this.$store.state.player.statistics.speed,
+        Health: this.$store.state.player.statistics.health
+      }
+      return attributes
+    },
+    mentalAttributes: function () {
+      let attributes = {
+        Education: this.$store.state.player.statistics.education,
+        Wisdom: this.$store.state.player.statistics.wisdom,
+        Charisma: this.$store.state.player.statistics.charisma
+      }
+      return attributes
     }
   }
 }

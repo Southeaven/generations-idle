@@ -1,12 +1,17 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Overview from '@/components/Overview/OverviewMain'
-import OverviewView from '@/components/Overview/OverviewView'
+
+import Overview from '@/components/Overview/Main'
+import OverviewView from '@/components/Overview/Overview'
 import OverviewPlayer from '@/components/Overview/PlayerView'
-import Training from '@/components/Training/TrainingMain'
-import Job from '@/components/Job/JobMain'
-import Options from '@/components/Options/OptionsMain'
-import NewGame from '@/components/New game/NewGameMain'
+
+import Training from '@/components/Training/Main'
+import Job from '@/components/Job/Main'
+import Options from '@/components/Options/Main'
+
+import NewGame from '@/components/New game/Main'
+import NewGameChoice from '@/components/New game/Choice'
+import NewGameCustomize from '@/components/New game/Customize'
 
 Vue.use(Router)
 
@@ -14,7 +19,13 @@ export default new Router({
   routes: [
     {
       path: '',
-      redirect: '/overview'
+      redirect: to => {
+        if (window.localStorage.getItem('generations-idle') !== null) {
+          return '/overview'
+        } else {
+          return '/newgame'
+        }
+      }
     },
     {
       path: '/overview',
@@ -27,7 +38,7 @@ export default new Router({
         },
         {
           path: 'player',
-          name: 'Player',
+          name: 'Overview - Player',
           component: OverviewPlayer
         }
       ]
@@ -49,8 +60,19 @@ export default new Router({
     },
     {
       path: '/newgame',
-      name: 'New game',
-      components: NewGame
+      component: NewGame,
+      children: [
+        {
+          path: '/',
+          name: 'New game',
+          component: NewGameChoice
+        },
+        {
+          path: 'customize',
+          name: 'New game - customize',
+          component: NewGameCustomize
+        }
+      ]
     }
   ]
 })

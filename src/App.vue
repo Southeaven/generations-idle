@@ -19,7 +19,10 @@ export default {
     MainMenu
   },
   mounted: function () {
-    this.$store.dispatch('toggleEngine')
+    if (window.localStorage.getItem('generations-idle') !== null) {
+      this.$store.dispatch('loadGame')
+      this.$store.dispatch('toggleEngine')
+    }
   }
 }
 </script>
