@@ -27,6 +27,13 @@ export const loadGame = ({ state, dispatch, rootState }) => {
   dispatch('setPlayerInfo', gameData.player)
 }
 
+export const importGame = ({ dispatch }, payload) => {
+  let gameData = JSON.parse(window.atob(payload))
+  dispatch('setSaveInfo', gameData.saveInfo)
+  dispatch('setTime', gameData.time)
+  dispatch('setPlayerInfo', gameData.player)
+}
+
 export const resetGame = () => {
   if (localStorage.getItem('generations-idle') !== null) {
     localStorage.removeItem('generations-idle')

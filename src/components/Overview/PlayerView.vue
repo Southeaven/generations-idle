@@ -54,7 +54,7 @@ export default {
       return this.$store.state.player.firstName
     },
     lastName: function () {
-      return this.$store.state.player.firstName
+      return this.$store.state.player.lastName
     },
     age: function () {
       return this.$store.state.player.age

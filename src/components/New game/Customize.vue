@@ -150,7 +150,7 @@ export default {
         if (choice) {
           this.player.avatar = Math.floor(Math.random() * (50 - 1 + 1)) + 1
         } else {
-          this.player.avatar = Math.floor(Math.random() * (31 - 1 + 1)) + 1
+          this.player.avatar = -1 * (Math.floor(Math.random() * (31 - 1 + 1)) + 1)
         }
       }
     },

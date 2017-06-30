@@ -7,5 +7,5 @@ export const setVersion = (state, payload) => {
 }
 
 export const setStartingDate = (state, payload) => {
-  state.version = payload
+  state.setStartingDate = payload
 }

@@ -1,7 +1,7 @@
 <template lang="html">
-  <router-link  class="ui link card" :to="'./player'" append>
+  <router-link class="card" :to="'./player'" append>
     <div class="ui image">
-      <img src="http://via.placeholder.com/500" alt="">
+      <img v-bind:src="avatar" alt="">
     </div>
     <div class="content">
       <div class="header">{{ firstName + ' ' + lastName }}</div>
@@ -28,6 +28,23 @@ export default {
       } else {
         return 'Smith'
       }
+    },
+    avatar: function () {
+      let string = '../../../static/avatars/'
+      if (this.$store.state.player.gender === 'Male' || this.$store.state.player.gender === 'Female') {
+        string = string + this.$store.state.player.gender.toLowerCase() + '/' +
+        this.$store.state.player.avatar + '.png'
+      } else {
+        let temporaryGender = this.$store.state.player.avatar > 0 ? 'Male' : 'Female'
+        if (temporaryGender === 'Male') {
+          string = string + temporaryGender.toLowerCase() + '/' +
+          this.$store.state.player.avatar + '.png'
+        } else {
+          string = string + temporaryGender.toLowerCase() + '/' +
+          -1 * this.$store.state.player.avatar + '.png'
+        }
+      }
+      return string
     }
   }
 }

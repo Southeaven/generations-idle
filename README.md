@@ -2,6 +2,37 @@
 
 > Generations Idle - an incremental sim game.
 
+## TODO list
+
+** Overview **
+
+- [x] Player view
+- [ ] Spouse view
+- [ ] Children view
+
+** Training **
+
+- [ ] Statistics gain
+
+** Job **
+
+- [ ] Money earning
+
+**  Options **
+
+- [x] Save game
+- [x] Load game
+- [x] Reset game
+- [x] Export game
+- [x] Import game
+
+** New game **
+
+- [ ] Randomization
+- [x] Customization
+  - [x] Basic info
+  - [x] Statistics
+
 ## Build Setup
 
 ``` bash
