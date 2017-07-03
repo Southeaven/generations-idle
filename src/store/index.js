@@ -5,6 +5,8 @@ import * as mutations from './mutations'
 import * as actions from './actions'
 import time from './modules/time'
 import player from './modules/player'
+import training from './modules/training'
+import job from './modules/job'
 
 Vue.use(Vuex)
 
@@ -14,6 +16,8 @@ export default new Vuex.Store({
   actions,
   modules: {
     time,
-    player
+    player,
+    training,
+    job
   }
 })

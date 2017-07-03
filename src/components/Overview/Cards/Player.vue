@@ -30,7 +30,7 @@ export default {
       }
     },
     avatar: function () {
-      let string = '../../../static/avatars/'
+      let string = '../../../../static/avatars/'
       if (this.$store.state.player.gender === 'Male' || this.$store.state.player.gender === 'Female') {
         string = string + this.$store.state.player.gender.toLowerCase() + '/' +
         this.$store.state.player.avatar + '.png'

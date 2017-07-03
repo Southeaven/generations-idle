@@ -7,6 +7,7 @@
       <div class="item">Last name: {{ this.lastName }}</div>
       <div class="item">Age: {{ this.age }}</div>
       <div class="item">Gender: {{ this.gender }}</div>
+      <div class="item">Money: {{ this.money }}$</div>
     </div>
     <div class="ui grid">
       <div class="eight wide column">
@@ -61,6 +62,10 @@ export default {
     },
     gender: function () {
       return this.$store.state.player.gender
+    },
+    // temporary
+    money: function () {
+      return this.$store.state.player.money
     },
     physicalAttributes: function () {
       let attributes = {

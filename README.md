@@ -12,11 +12,11 @@
 
 ** Training **
 
-- [ ] Statistics gain
+- [x] Statistics gain
 
 ** Job **
 
-- [ ] Money earning
+- [x] \(temporary) Money earning
 
 **  Options **
 

@@ -9,7 +9,7 @@
     </div>
     <template v-if="spouseNotFound">
       <div class="ui image">
-        <img src="../../../static/avatars/female/10.png" alt="">
+        <img src="../../../../static/avatars/female/10.png" alt="">
       </div>
       <div class="content">
         <div class="header">Jane Doe</div>

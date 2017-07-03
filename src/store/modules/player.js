@@ -4,6 +4,7 @@ const state = {
   age: 0,
   gender: '',
   avatar: 0,
+  money: 0, // temporary
   statistics: {
     power: 0,
     speed: 0,
@@ -15,57 +16,84 @@ const state = {
 }
 
 const mutations = {
-  setFirstName (state, payload) {
+  setPlayerFirstName (state, payload) {
     state.firstName = payload
   },
-  setLastName (state, payload) {
+  setPlayerLastName (state, payload) {
     state.lastName = payload
   },
-  setAge (state, payload) {
+  setPlayerAge (state, payload) {
     state.age = payload
   },
-  setGender (state, payload) {
+  setPlayerGender (state, payload) {
     state.gender = payload
   },
-  setAvatar (state, payload) {
+  setPlayerAvatar (state, payload) {
     state.avatar = payload
   },
-  setPower (state, payload) {
+  // temporary
+  setPlayerMoney (state, payload) {
+    state.money = payload
+  },
+  setPlayerPower (state, payload) {
     state.statistics.power = payload
   },
-  setSpeed (state, payload) {
+  setPlayerSpeed (state, payload) {
     state.statistics.speed = payload
   },
-  setHealth (state, payload) {
+  setPlayerHealth (state, payload) {
     state.statistics.health = payload
   },
-  setEducation (state, payload) {
+  setPlayerEducation (state, payload) {
     state.statistics.education = payload
   },
-  setWisdom (state, payload) {
+  setPlayerWisdom (state, payload) {
     state.statistics.wisdom = payload
   },
-  setCharisma (state, payload) {
+  setPlayerCharisma (state, payload) {
     state.statistics.charisma = payload
+  },
+  // temporary
+  addPlayerMoney (state, payload) {
+    state.money += payload
+  },
+  addPlayerPower (state, payload) {
+    state.statistics.power += payload
+  },
+  addPlayerSpeed (state, payload) {
+    state.statistics.speed += payload
+  },
+  addPlayerHealth (state, payload) {
+    state.statistics.health += payload
+  },
+  addPlayerEducation (state, payload) {
+    state.statistics.education += payload
+  },
+  addPlayerWisdom (state, payload) {
+    state.statistics.wisdom += payload
+  },
+  addPlayerCharisma (state, payload) {
+    state.statistics.charisma += payload
   }
 }
 
 const actions = {
-  setStatistics ({ commit }, payload) {
-    commit('setPower', payload.power)
-    commit('setSpeed', payload.speed)
-    commit('setHealth', payload.health)
-    commit('setEducation', payload.education)
-    commit('setWisdom', payload.wisdom)
-    commit('setCharisma', payload.charisma)
+  setPlayerStatistics ({ commit }, payload) {
+    commit('setPlayerPower', payload.power)
+    commit('setPlayerSpeed', payload.speed)
+    commit('setPlayerHealth', payload.health)
+    commit('setPlayerEducation', payload.education)
+    commit('setPlayerWisdom', payload.wisdom)
+    commit('setPlayerCharisma', payload.charisma)
   },
   setPlayerInfo ({ commit, dispatch }, payload) {
-    commit('setFirstName', payload.firstName)
-    commit('setLastName', payload.lastName)
-    commit('setAge', payload.age)
-    commit('setGender', payload.gender)
-    commit('setAvatar', payload.avatar)
-    dispatch('setStatistics', payload.statistics)
+    commit('setPlayerFirstName', payload.firstName)
+    commit('setPlayerLastName', payload.lastName)
+    commit('setPlayerAge', payload.age)
+    commit('setPlayerGender', payload.gender)
+    commit('setPlayerAvatar', payload.avatar)
+    commit('setPlayerMoney', payload.money)// temporary
+    dispatch('setPlayerStatistics', payload.statistics)
   }
 }
 

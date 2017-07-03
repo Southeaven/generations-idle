@@ -47,12 +47,15 @@ export default {
         year: this.$store.state.time.year
       }
       gameData.player = this.$store.state.player
+      gameData.training = this.$store.state.training
+      gameData.job = this.$store.state.job
       this.gameDataString = window.btoa(JSON.stringify(gameData))
     },
     importGame: function () {
       if (this.gameDataString !== '') {
         this.$store.dispatch('importGame', this.gameDataString)
         this.gameDataString = ''
+        this.$store.dispatch('toggleEngine')
       }
     },
     resetGame: function () {

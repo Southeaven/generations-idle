@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import PlayerCard from './PlayerCard'
-import SpouseCard from './SpouseCard'
+import PlayerCard from './Cards/Player'
+import SpouseCard from './Cards/Spouse'
 
 export default {
   components: {

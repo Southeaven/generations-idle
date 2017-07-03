@@ -18,7 +18,7 @@ export default {
     Navbar,
     MainMenu
   },
-  mounted: function () {
+  beforeCreate: function () {
     if (window.localStorage.getItem('generations-idle') !== null) {
       this.$store.dispatch('loadGame')
       this.$store.dispatch('toggleEngine')

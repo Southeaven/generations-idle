@@ -128,6 +128,7 @@ export default {
         age: 20,
         gender: this.gender,
         avatar: 0,
+        money: 20000, // temporary
         statistics: {
           power: this.firstQuestion === 1 ? 2 : 1,
           speed: this.firstQuestion === 2 ? 2 : 1,

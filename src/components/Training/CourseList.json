@@ -1,0 +1,74 @@
+[
+  {
+    "name": "PowerUP",
+    "goal": 360,
+    "change": {
+      "power": 1,
+      "speed": 0,
+      "health": 0,
+      "education": 0,
+      "wisdom": 0,
+      "charisma": 0
+    }
+  },
+  {
+    "name": "SpeedUP",
+    "goal": 360,
+    "change": {
+      "power": 0,
+      "speed": 1,
+      "health": 0,
+      "education": 0,
+      "wisdom": 0,
+      "charisma": 0
+    }
+  },
+  {
+    "name": "HealthUP",
+    "goal": 360,
+    "change": {
+      "power": 0,
+      "speed": 0,
+      "health": 1,
+      "education": 0,
+      "wisdom": 0,
+      "charisma": 0
+    }
+  },
+  {
+    "name": "EducationUP",
+    "goal": 360,
+    "change": {
+      "power": 0,
+      "speed": 0,
+      "health": 0,
+      "education": 1,
+      "wisdom": 0,
+      "charisma": 0
+    }
+  },
+  {
+    "name": "WisdomUP",
+    "goal": 360,
+    "change": {
+      "power": 0,
+      "speed": 0,
+      "health": 0,
+      "education": 0,
+      "wisdom": 1,
+      "charisma": 0
+    }
+  },
+  {
+    "name": "CharismaUP",
+    "goal": 360,
+    "change": {
+      "power": 0,
+      "speed": 0,
+      "health": 0,
+      "education": 0,
+      "wisdom": 0,
+      "charisma": 1
+    }
+  }
+]
