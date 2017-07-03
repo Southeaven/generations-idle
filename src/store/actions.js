@@ -44,7 +44,7 @@ export const resetGame = () => {
   if (localStorage.getItem('generations-idle') !== null) {
     localStorage.removeItem('generations-idle')
   }
-  window.location.assign('/')
+  window.location.assign('/generations-idle')
 }
 
 export const runOneTick = ({ commit, dispatch, rootState }) => {
