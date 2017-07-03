@@ -1,7 +1,7 @@
 <template lang="html">
   <router-link class="card" :to="'./player'" append>
     <div class="ui image">
-      <img v-bind:src="avatar" alt="">
+      <img v-bind:src="avatar()" alt="">
     </div>
     <div class="content">
       <div class="header">{{ firstName + ' ' + lastName }}</div>
@@ -28,7 +28,9 @@ export default {
       } else {
         return 'Smith'
       }
-    },
+    }
+  },
+  methods: {
     avatar: function () {
       let string = '../../../../static/avatars/'
       if (this.$store.state.player.gender === 'Male' || this.$store.state.player.gender === 'Female') {
