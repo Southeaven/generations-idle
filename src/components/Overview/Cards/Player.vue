@@ -32,7 +32,12 @@ export default {
   },
   methods: {
     avatar: function () {
-      let string = '../../../../static/avatars/'
+      let string = ''
+      if (process.env.NODE_ENV === 'development') {
+        string = '../../../../static/avatars/'
+      } else {
+        string = 'https://southeaven.github.io/generations-idle/static/avatars/'
+      }
       if (this.$store.state.player.gender === 'Male' || this.$store.state.player.gender === 'Female') {
         string = string + this.$store.state.player.gender.toLowerCase() + '/' +
         this.$store.state.player.avatar + '.png'
